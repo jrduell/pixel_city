@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5FDFA61A256AFFCA0045A1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA619256AFFCA0045A1E0 /* AppDelegate.swift */; };
 		5FDFA61C256AFFCA0045A1E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA61B256AFFCA0045A1E0 /* SceneDelegate.swift */; };
-		5FDFA61E256AFFCA0045A1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA61D256AFFCA0045A1E0 /* ViewController.swift */; };
+		5FDFA61E256AFFCA0045A1E0 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA61D256AFFCA0045A1E0 /* MapVC.swift */; };
 		5FDFA621256AFFCA0045A1E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDFA61F256AFFCA0045A1E0 /* Main.storyboard */; };
 		5FDFA623256AFFCB0045A1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FDFA622256AFFCB0045A1E0 /* Assets.xcassets */; };
 		5FDFA626256AFFCB0045A1E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDFA624256AFFCB0045A1E0 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		5FDFA616256AFFCA0045A1E0 /* Pixel-city.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel-city.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDFA619256AFFCA0045A1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FDFA61B256AFFCA0045A1E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5FDFA61D256AFFCA0045A1E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5FDFA61D256AFFCA0045A1E0 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		5FDFA620256AFFCA0045A1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FDFA622256AFFCB0045A1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FDFA625256AFFCB0045A1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,47 @@
 		5FDFA618256AFFCA0045A1E0 /* Pixel-city */ = {
 			isa = PBXGroup;
 			children = (
+				5FDFA631256B00180045A1E0 /* Utilities */,
+				5FDFA630256B00090045A1E0 /* Extensions */,
+				5FDFA62F256AFFF90045A1E0 /* View */,
+				5FDFA62E256AFFF20045A1E0 /* Controller */,
 				5FDFA619256AFFCA0045A1E0 /* AppDelegate.swift */,
 				5FDFA61B256AFFCA0045A1E0 /* SceneDelegate.swift */,
-				5FDFA61D256AFFCA0045A1E0 /* ViewController.swift */,
 				5FDFA61F256AFFCA0045A1E0 /* Main.storyboard */,
 				5FDFA622256AFFCB0045A1E0 /* Assets.xcassets */,
 				5FDFA624256AFFCB0045A1E0 /* LaunchScreen.storyboard */,
 				5FDFA627256AFFCB0045A1E0 /* Info.plist */,
 			);
 			path = "Pixel-city";
+			sourceTree = "<group>";
+		};
+		5FDFA62E256AFFF20045A1E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FDFA61D256AFFCA0045A1E0 /* MapVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FDFA62F256AFFF90045A1E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FDFA630256B00090045A1E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5FDFA631256B00180045A1E0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FDFA61E256AFFCA0045A1E0 /* ViewController.swift in Sources */,
+				5FDFA61E256AFFCA0045A1E0 /* MapVC.swift in Sources */,
 				5FDFA61A256AFFCA0045A1E0 /* AppDelegate.swift in Sources */,
 				5FDFA61C256AFFCA0045A1E0 /* SceneDelegate.swift in Sources */,
 			);
