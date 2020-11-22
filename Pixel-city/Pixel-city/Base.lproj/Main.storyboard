@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,75 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="Pixel_city" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjI-EU-dfP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8E4-3P-i94">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double-Tap to drop a pin and view photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSu-Vm-PiS">
+                                        <rect key="frame" x="8" y="52" width="398" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="398" id="3OO-w7-GV4"/>
+                                            <constraint firstAttribute="height" constant="21" id="TOR-5z-sLJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="7sy-Un-gP0"/>
+                                    <constraint firstAttribute="bottom" secondItem="tSu-Vm-PiS" secondAttribute="bottom" constant="17" id="aK1-qe-27L"/>
+                                    <constraint firstItem="tSu-Vm-PiS" firstAttribute="centerX" secondItem="8E4-3P-i94" secondAttribute="centerX" id="ueL-ro-9wC"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3E-sc-4LQ">
+                                <rect key="frame" x="327" y="659" width="67" height="67"/>
+                                <state key="normal" image="locationButton"/>
+                                <connections>
+                                    <action selector="centerMapButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GD9-ff-SGc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-wY-j8U">
+                                <rect key="frame" x="0.0" y="736" width="414" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="Vmx-3O-SuC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CjI-EU-dfP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8YX-Nq-496"/>
+                            <constraint firstItem="p3E-sc-4LQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="EwU-nR-SuC"/>
+                            <constraint firstItem="CjI-EU-dfP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HFe-Bu-tS6"/>
+                            <constraint firstItem="8E4-3P-i94" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KSd-KE-CQT"/>
+                            <constraint firstItem="xgC-wY-j8U" firstAttribute="top" secondItem="CjI-EU-dfP" secondAttribute="bottom" id="XMJ-e3-J35"/>
+                            <constraint firstItem="xgC-wY-j8U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aDa-od-Stl"/>
+                            <constraint firstAttribute="bottom" secondItem="xgC-wY-j8U" secondAttribute="bottom" id="ai6-cG-6MI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p3E-sc-4LQ" secondAttribute="trailing" constant="20" id="dIk-SY-Bpp"/>
+                            <constraint firstItem="CjI-EU-dfP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kpM-Gv-q8G"/>
+                            <constraint firstItem="8E4-3P-i94" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lPI-LY-QZl"/>
+                            <constraint firstItem="8E4-3P-i94" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="miZ-Dq-CdM"/>
+                            <constraint firstAttribute="trailing" secondItem="xgC-wY-j8U" secondAttribute="trailing" id="uRK-6o-8tB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="CjI-EU-dfP" id="qaY-5b-mW7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="96"/>
+            <point key="canvasLocation" x="-201" y="20"/>
         </scene>
     </scenes>
     <resources>
+        <image name="locationButton" width="67" height="67"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
