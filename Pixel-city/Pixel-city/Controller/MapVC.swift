@@ -11,10 +11,13 @@ import MapKit
 
 class MapVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var pullUpView: UIView!
+    @IBOutlet weak var pullUpViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var centerLocationBtn: UIButton!
+    
     
     var locationManager = CLLocationManager()
     let regionRadius: Double = 1000
-    //let authorizationStatus = CLLocationManager.authorizationStatus()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,13 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         doubleTap.numberOfTapsRequired = 2
         doubleTap.delegate = self
         mapView.addGestureRecognizer(doubleTap)
+    }
+    
+    func animateViewUp() {
+        pullUpViewHeight.constant = 300
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func centerMapButtonWasPressed(_ sender: Any) {
@@ -61,6 +71,7 @@ extension MapVC: MKMapViewDelegate {
     
     @objc func dropPin(sender: UITapGestureRecognizer) {
         removePin()
+        animateViewUp()
         
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
