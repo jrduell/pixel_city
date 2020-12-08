@@ -132,6 +132,7 @@ extension MapVC: MKMapViewDelegate {
         removePin()
         removeSpinner()
         removeProgressLbl()
+        
         animateViewUp()
         addSwipe()
         addSpinner()
