@@ -30,6 +30,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     var collectionView: UICollectionView?
     
     var imageUrlArray = [String]()
+    var imageArray = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         collectionView?.register(PhotoCell.self, forCellWithReuseIdentifier: "photoCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        collectionView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         pullUpView.addSubview(collectionView!)
     }
@@ -68,6 +69,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func animateViewDown() {
+        cancelAllSessions()
         pullUpViewHeight.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -136,6 +138,7 @@ extension MapVC: MKMapViewDelegate {
         removePin()
         removeSpinner()
         removeProgressLbl()
+        cancelAllSessions()
         
         animateViewUp()
         addSwipe()
@@ -150,8 +153,20 @@ extension MapVC: MKMapViewDelegate {
         
         let coordinateRegion = MKCoordinateRegion.init(center: touchCoordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
-        retrieveUrls(forAnnotation: annotation) { (true) in
-            print(self.imageUrlArray)
+       
+        retrieveUrls(forAnnotation: annotation) { (finished) in
+            if finished == true {
+                self.retrieveImages { (finished) in
+                    if finished {
+                        // hide spinner
+                        self.removeSpinner()
+                        // hide label
+                        self.removeProgressLbl()
+                        // reload collectionView
+                        
+                    }
+                }
+            }
         }
     }
     
@@ -185,6 +200,36 @@ extension MapVC: MKMapViewDelegate {
             }
         }
     }
+    
+    func retrieveImages(handler: @escaping (_ status: Bool) -> ()) {
+        imageArray = []
+        
+        for url in imageUrlArray {
+            AF.request(url).responseImage { (response) in
+                switch response.result {
+                case .success(let value):
+                    guard let image = value as UIImage? else { return }
+                    self.imageArray.append(image)
+                    self.progressLbl?.text = "\(self.imageArray.count)/40 Images Downloaded..."
+                    
+                    if self.imageArray.count == self.imageUrlArray.count {
+                        handler(true)
+                    }
+                case .failure(let error):
+                    print(error)
+                    break
+                }
+            }
+        }
+    }
+    
+    func cancelAllSessions() {
+        AF.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+            sessionDataTask.forEach({ $0.cancel() })
+            downloadData.forEach({ $0.cancel() })
+        }
+    }
+    
 }
 
 extension MapVC: CLLocationManagerDelegate {
