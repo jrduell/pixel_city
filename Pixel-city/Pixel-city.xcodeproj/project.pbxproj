@@ -11,6 +11,7 @@
 		5F2109F1257D575D002741B6 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2109F0257D575D002741B6 /* PhotoCell.swift */; };
 		5F9A907225789127000E4B64 /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A907125789127000E4B64 /* DroppablePin.swift */; };
 		5FB60CB5257F1F7100BE69DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB60CB4257F1F7100BE69DA /* Constants.swift */; };
+		5FBC854E2585CD5400D15C48 /* PopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBC854D2585CD5400D15C48 /* PopVC.swift */; };
 		5FDFA61A256AFFCA0045A1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA619256AFFCA0045A1E0 /* AppDelegate.swift */; };
 		5FDFA61C256AFFCA0045A1E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA61B256AFFCA0045A1E0 /* SceneDelegate.swift */; };
 		5FDFA61E256AFFCA0045A1E0 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFA61D256AFFCA0045A1E0 /* MapVC.swift */; };
@@ -24,6 +25,7 @@
 		5F2109F0257D575D002741B6 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		5F9A907125789127000E4B64 /* DroppablePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		5FB60CB4257F1F7100BE69DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5FBC854D2585CD5400D15C48 /* PopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopVC.swift; sourceTree = "<group>"; };
 		5FDFA616256AFFCA0045A1E0 /* Pixel-city.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel-city.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDFA619256AFFCA0045A1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FDFA61B256AFFCA0045A1E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				5FDFA61D256AFFCA0045A1E0 /* MapVC.swift */,
+				5FBC854D2585CD5400D15C48 /* PopVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			files = (
 				5FDFA61E256AFFCA0045A1E0 /* MapVC.swift in Sources */,
 				5F2109F1257D575D002741B6 /* PhotoCell.swift in Sources */,
+				5FBC854E2585CD5400D15C48 /* PopVC.swift in Sources */,
 				5F9A907225789127000E4B64 /* DroppablePin.swift in Sources */,
 				5FDFA61A256AFFCA0045A1E0 /* AppDelegate.swift in Sources */,
 				5FDFA61C256AFFCA0045A1E0 /* SceneDelegate.swift in Sources */,
